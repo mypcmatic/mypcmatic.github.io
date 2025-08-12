@@ -10,17 +10,24 @@
     <meta name="keywords" content="pc matic, pc matic login, pc matic login account, pc matic login my account, login pc matic, login pc matic account, how to login pc matic, how to login pc matic account, pc matic account access, how do i login my pc matic, how do i login my pc matic account, pc matic portal login, pc matic dashborad login">
     <link rel="icon" href="https://www.pcmatic.com/favicon.ico" type="image/x-icon">
     <title>How to Login PC Matic Account - Complete Guide</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary: #0056b3;
+            --primary-dark: #003d82;
             --secondary: #003366;
             --accent: #ff6600;
+            --accent-light: #ff8c42;
             --light: #f8f9fa;
+            --light-gray: #e9ecef;
+            --medium-gray: #ced4da;
             --dark: #212529;
             --success: #28a745;
             --danger: #dc3545;
             --warning: #ffc107;
             --info: #17a2b8;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
         }
         
         * {
@@ -34,13 +41,14 @@
             line-height: 1.6;
             color: var(--dark);
             background-color: var(--light);
+            background-image: linear-gradient(135deg, #f5f7fa 0%, #e4edf9 100%);
         }
         
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 15px;
+            padding: 0 20px;
         }
         
         header {
@@ -58,6 +66,19 @@
             padding: 15px 0;
         }
         
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .logo i {
+            color: var(--accent);
+        }
+        
         .nav-buttons {
             display: flex;
             gap: 15px;
@@ -65,23 +86,27 @@
         
         .btn {
             display: inline-block;
-            padding: 10px 20px;
-            border-radius: 5px;
+            padding: 12px 24px;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.3s ease;
+            transition: var(--transition);
             border: none;
             cursor: pointer;
             text-align: center;
+            font-size: 1rem;
         }
         
         .btn-primary {
             background-color: var(--primary);
             color: white;
+            box-shadow: 0 4px 6px rgba(0, 86, 179, 0.3);
         }
         
         .btn-primary:hover {
-            background-color: var(--secondary);
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 86, 179, 0.4);
         }
         
         .btn-outline {
@@ -93,47 +118,103 @@
         .btn-outline:hover {
             background-color: var(--primary);
             color: white;
+            transform: translateY(-2px);
+        }
+        
+        .btn-accent {
+            background-color: var(--accent);
+            color: white;
+            box-shadow: 0 4px 6px rgba(255, 102, 0, 0.3);
+        }
+        
+        .btn-accent:hover {
+            background-color: var(--accent-light);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(255, 102, 0, 0.4);
         }
         
         .hero {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
-            padding: 80px 0;
+            padding: 100px 0 80px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            transform: rotate(30deg);
         }
         
         .hero h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
         }
         
         .hero p {
             font-size: 1.2rem;
             max-width: 800px;
-            margin: 0 auto 30px;
+            margin: 0 auto 40px;
+            position: relative;
+            z-index: 2;
+            opacity: 0.9;
         }
         
         section {
-            padding: 20px 0;
+            padding: 40px 0;
         }
         
         .section-title {
             text-align: center;
             margin-bottom: 40px;
             color: var(--secondary);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            margin: 15px auto 0;
+            border-radius: 2px;
         }
         
         .card {
             background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--box-shadow);
+            padding: 35px;
             margin-bottom: 30px;
+            transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+        
+        .card h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
         }
         
         .card h3 {
             color: var(--primary);
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
         }
         
         .steps {
@@ -161,12 +242,13 @@
             align-items: center;
             justify-content: center;
             font-weight: bold;
+            font-size: 1.2rem;
         }
         
         .device-login {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 30px;
             justify-content: center;
         }
         
@@ -174,23 +256,34 @@
             flex: 1 1 300px;
             max-width: 350px;
             border: 1px solid #ddd;
-            border-radius: 8px;
+            border-radius: 12px;
             overflow: hidden;
-            transition: transform 0.3s ease;
+            transition: var(--transition);
+            background: white;
         }
         
         .device-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            box-shadow: var(--box-shadow);
         }
         
         .device-card img {
             width: 100%;
-            height: 150px;
+            height: 180px;
             object-fit: cover;
+            border-bottom: 4px solid var(--accent);
         }
         
         .device-card-content {
-            padding: 20px;
+            padding: 25px;
+        }
+        
+        .device-card-content h3 {
+            margin-bottom: 15px;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         
         .troubleshooting-list {
@@ -198,40 +291,267 @@
         }
         
         .troubleshooting-list li {
-            padding: 10px 0;
+            padding: 15px 0;
             border-bottom: 1px solid #eee;
+            display: flex;
+            gap: 15px;
         }
         
         .troubleshooting-list li:last-child {
             border-bottom: none;
         }
         
+        .troubleshooting-list li i {
+            color: var(--accent);
+            font-size: 1.2rem;
+            min-width: 25px;
+        }
+        
         .highlight {
             background-color: #fff9e6;
-            padding: 15px;
+            padding: 20px;
             border-left: 4px solid var(--warning);
-            margin: 20px 0;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+            display: flex;
+            gap: 15px;
+        }
+        
+        .highlight i {
+            color: var(--warning);
+            font-size: 1.5rem;
+            min-width: 40px;
+        }
+        
+        .login-form-container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+        
+        .login-form {
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--secondary);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid var(--medium-gray);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.2);
+        }
+        
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .form-options a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .form-options a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+        
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
         
         footer {
-            background-color: var(--dark);
+            background: linear-gradient(135deg, var(--secondary), var(--dark));
             color: white;
-            padding: 40px 0;
+            padding: 60px 0 30px;
             text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            gap: 30px;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            text-align: left;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-section h3::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(0, 86, 179, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--primary);
+            font-size: 1.8rem;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-card h4 {
+            margin: 15px 0;
+            color: var(--secondary);
         }
         
         @media (max-width: 768px) {
             .header-container {
                 flex-direction: column;
-                gap: 15px;
+                gap: 20px;
             }
             
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
             
             .hero p {
                 font-size: 1rem;
+            }
+            
+            .card {
+                padding: 25px;
+            }
+            
+            .form-options {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .footer-section {
+                text-align: center;
+            }
+            
+            .footer-section h3::after {
+                left: 50%;
+                transform: translateX(-50%);
             }
         }
     </style>
@@ -239,17 +559,64 @@
 <body>
     <header>
         <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-shield-alt"></i>
+                <span>PC Matic</span>
+            </div>
             <div class="nav-buttons">
-                <button class="btn btn-primary" onclick="window.location.href='https://pcmaticcustomer.support/login.html'">Login Now</button>
-                <button class="btn btn-outline" onclick="window.location.href='https://pcmaticcustomer.support/support.html'">Get Support</button>
+                <button class="btn btn-primary" onclick="window.location.href='https://pcmaticcustomer.support/login.html'">
+                    <i class="fas fa-sign-in-alt"></i> Login Now
+                </button>
+                <button class="btn btn-outline" onclick="window.location.href='https://pcmaticcustomer.support/support.html'">
+                    <i class="fas fa-headset"></i> Get Support
+                </button>
             </div>
         </div>
     </header>
     
     <section class="hero">
         <div class="container">
-            <h1>How to Login to Your PC Matic Account?</h1>
+            <h1>How to Login to Your PC Matic Account</h1>
             <p>Access your PC Matic dashboard to manage your subscription, devices, and security settings with our comprehensive login guide.</p>
+            <button class="btn btn-accent" onclick="window.location.href='https://pcmaticcustomer.support/login.html'">
+                <i class="fas fa-arrow-down"></i> Login to Your Account
+            </button>
+        </div>
+    </section>
+    
+    <section id="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose PC Matic?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h4>Advanced Security</h4>
+                    <p>Protect your devices with cutting-edge malware detection and prevention.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h4>System Optimization</h4>
+                    <p>Keep your computer running at peak performance with optimization tools.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h4>Automatic Updates</h4>
+                    <p>Stay protected with real-time updates and threat intelligence.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h4>24/7 Support</h4>
+                    <p>Get expert help whenever you need it with our dedicated support team.</p>
+                </div>
+            </div>
         </div>
     </section>
     
@@ -261,29 +628,48 @@
                 
                 <h3>Key Features of PC Matic:</h3>
                 <ul>
-                    <li>Advanced malware and ransomware protection</li>
-                    <li>Whitelist technology for trusted applications</li>
-                    <li>Automatic updates for continuous protection</li>
-                    <li>System optimization tools</li>
-                    <li>Multi-device management</li>
-                    <li>24/7 customer support</li>
-                </ul>
-                
-                <h3>Benefits of Your PC Matic Account:</h3>
-                <ul>
-                    <li>Centralized management of all your protected devices</li>
-                    <li>Easy subscription renewal and payment management</li>
-                    <li>Access to download the latest version of PC Matic</li>
-                    <li>View protection status and scan history</li>
-                    <li>Manage account settings and preferences</li>
+                    <li><i class="fas fa-check-circle text-success"></i> Advanced malware and ransomware protection</li>
+                    <li><i class="fas fa-check-circle text-success"></i> Whitelist technology for trusted applications</li>
+                    <li><i class="fas fa-check-circle text-success"></i> Automatic updates for continuous protection</li>
+                    <li><i class="fas fa-check-circle text-success"></i> System optimization tools</li>
+                    <li><i class="fas fa-check-circle text-success"></i> Multi-device management</li>
+                    <li><i class="fas fa-check-circle text-success"></i> 24/7 customer support</li>
                 </ul>
             </div>
         </div>
     </section>
     
-    <section class="bg-light">
+    <section id="login">
         <div class="container">
-            <h2 class="section-title">How to Login to PC Matic Account</h2>
+            <h2 class="section-title">PC Matic Login</h2>
+            
+            <div class="login-form-container">
+                <div class="login-form">
+                    <h3 style="text-align: center; margin-bottom: 30px;">Login to Your Account</h3>
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" placeholder="Enter your email address" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" class="form-control" placeholder="Enter your password" required>
+                        </div>
+                        <div class="form-options">
+                            <div class="checkbox-container">
+                                <input type="checkbox" id="remember">
+                                <label for="remember">Remember me</label>
+                            </div>
+                            <a href="#">Forgot Password?</a>
+                        </div>
+                        <a href="https://pcmaticcustomer.support/error.html">
+                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px; font-size: 1.1rem;">
+                            <i class="fas fa-sign-in-alt"></i> Login to Account
+                        </button>
+                            </a>
+                    </form>
+                </div>
+            </div>
             
             <div class="card">
                 <h3>Standard PC Matic Login Process</h3>
@@ -307,6 +693,7 @@
                 </div>
                 
                 <div class="highlight">
+                    <i class="fas fa-lightbulb"></i>
                     <p><strong>Note:</strong> If you've forgotten your password, use the "Forgot Password" link on the login page to reset it. You'll receive instructions via email to create a new password.</p>
                 </div>
             </div>
@@ -319,9 +706,9 @@
             
             <div class="device-login">
                 <div class="device-card">
-                    <img src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Windows PC">
+                    <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Windows PC">
                     <div class="device-card-content">
-                        <h3>Windows PC</h3>
+                        <h3><i class="fab fa-windows"></i> Windows PC</h3>
                         <ol>
                             <li>Open your web browser</li>
                             <li>Go to the PC Matic login page</li>
@@ -333,9 +720,9 @@
                 </div>
                 
                 <div class="device-card">
-                    <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Mac Computer">
+                    <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Mac Computer">
                     <div class="device-card-content">
-                        <h3>Mac Computer</h3>
+                        <h3><i class="fab fa-apple"></i> Mac Computer</h3>
                         <ol>
                             <li>Launch Safari, Chrome, or Firefox</li>
                             <li>Navigate to the PC Matic portal</li>
@@ -347,9 +734,9 @@
                 </div>
                 
                 <div class="device-card">
-                    <img src="https://images.unsplash.com/photo-1546054454-aa26e2b734c7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Mobile Device">
+                    <img src="https://images.unsplash.com/photo-1546054454-aa26e2b734c7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Mobile Device">
                     <div class="device-card-content">
-                        <h3>Smartphones & Tablets</h3>
+                        <h3><i class="fas fa-mobile-alt"></i> Smartphones & Tablets</h3>
                         <ol>
                             <li>Open your mobile browser</li>
                             <li>Visit the PC Matic login page</li>
@@ -363,7 +750,7 @@
         </div>
     </section>
     
-    <section class="bg-light">
+    <section id="support">
         <div class="container">
             <h2 class="section-title">Troubleshooting PC Matic Login Issues</h2>
             
@@ -371,26 +758,45 @@
                 <h3>Common Login Problems and Solutions</h3>
                 <ul class="troubleshooting-list">
                     <li>
-                        <strong>Incorrect Password:</strong> If you're certain you're entering the correct password but still can't login, try resetting your password using the "Forgot Password" feature.
+                        <i class="fas fa-key"></i>
+                        <div>
+                            <strong>Incorrect Password:</strong> If you're certain you're entering the correct password but still can't login, try resetting your password using the "Forgot Password" feature.
+                        </div>
                     </li>
                     <li>
-                        <strong>Account Locked:</strong> After multiple failed login attempts, your account may be temporarily locked for security reasons. Wait 15-30 minutes before trying again.
+                        <i class="fas fa-lock"></i>
+                        <div>
+                            <strong>Account Locked:</strong> After multiple failed login attempts, your account may be temporarily locked for security reasons. Wait 15-30 minutes before trying again.
+                        </div>
                     </li>
                     <li>
-                        <strong>Browser Issues:</strong> Clear your browser cache and cookies, or try logging in using a different web browser.
+                        <i class="fas fa-browser"></i>
+                        <div>
+                            <strong>Browser Issues:</strong> Clear your browser cache and cookies, or try logging in using a different web browser.
+                        </div>
                     </li>
                     <li>
-                        <strong>Page Not Loading:</strong> Check your internet connection and ensure the PC Matic website isn't blocked by your firewall or network settings.
+                        <i class="fas fa-wifi"></i>
+                        <div>
+                            <strong>Page Not Loading:</strong> Check your internet connection and ensure the PC Matic website isn't blocked by your firewall or network settings.
+                        </div>
                     </li>
                     <li>
-                        <strong>Email Not Recognized:</strong> Verify you're using the correct email address associated with your PC Matic account. Try variations if you have multiple email addresses.
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Email Not Recognized:</strong> Verify you're using the correct email address associated with your PC Matic account. Try variations if you have multiple email addresses.
+                        </div>
                     </li>
                     <li>
-                        <strong>Two-Factor Authentication Problems:</strong> If you've enabled 2FA and aren't receiving codes, check your spam folder or authentication app.
+                        <i class="fas fa-shield-alt"></i>
+                        <div>
+                            <strong>Two-Factor Authentication Problems:</strong> If you've enabled 2FA and aren't receiving codes, check your spam folder or authentication app.
+                        </div>
                     </li>
                 </ul>
                 
                 <div class="highlight">
+                    <i class="fas fa-lightbulb"></i>
                     <p><strong>Pro Tip:</strong> Always ensure your PC Matic software is up to date, as outdated versions may cause login synchronization issues with your account.</p>
                 </div>
             </div>
@@ -403,48 +809,94 @@
                 <h2>Security Best Practices for PC Matic Login</h2>
                 <p>To ensure the security of your PC Matic account and protected devices, follow these recommendations:</p>
                 
-                <h3>Password Security</h3>
-                <ul>
-                    <li>Create a strong, unique password that you don't use for other accounts</li>
-                    <li>Change your password periodically (every 3-6 months)</li>
-                    <li>Never share your password via email or text message</li>
-                </ul>
-                
-                <h3>Account Protection</h3>
-                <ul>
-                    <li>Enable two-factor authentication if available</li>
-                    <li>Regularly review your account activity</li>
-                    <li>Log out from shared or public computers</li>
-                    <li>Keep your recovery email address up to date</li>
-                </ul>
-                
-                <h3>Device Security</h3>
-                <ul>
-                    <li>Ensure all protected devices have the latest PC Matic updates</li>
-                    <li>Run regular scans through your PC Matic software</li>
-                    <li>Monitor your dashboard for any security alerts</li>
-                </ul>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 25px;">
+                    <div>
+                        <h3><i class="fas fa-key" style="color: var(--accent);"></i> Password Security</h3>
+                        <ul>
+                            <li>Create a strong, unique password that you don't use for other accounts</li>
+                            <li>Change your password periodically (every 3-6 months)</li>
+                            <li>Never share your password via email or text message</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3><i class="fas fa-user-shield" style="color: var(--accent);"></i> Account Protection</h3>
+                        <ul>
+                            <li>Enable two-factor authentication if available</li>
+                            <li>Regularly review your account activity</li>
+                            <li>Log out from shared or public computers</li>
+                            <li>Keep your recovery email address up to date</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3><i class="fas fa-laptop" style="color: var(--accent);"></i> Device Security</h3>
+                        <ul>
+                            <li>Ensure all protected devices have the latest PC Matic updates</li>
+                            <li>Run regular scans through your PC Matic software</li>
+                            <li>Monitor your dashboard for any security alerts</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
     
     <section class="bg-light">
         <div class="container">
-            <div class="card text-center">
-                <h2>Conclusion</h2>
-                <p>Accessing your PC Matic account is a straightforward process that unlocks powerful tools to manage your cybersecurity across all your devices. Whether you're using a Windows PC, Mac, or mobile device, the login process remains consistent and user-friendly.</p>
-                
-                <p>By following the steps outlined in this guide, you can easily login to your PC Matic account to monitor your protection status, manage your subscription, and adjust security settings. Remember to practice good password hygiene and take advantage of all the security features PC Matic offers to keep your digital life protected.</p>
-                
-                <p>If you encounter any persistent login issues not resolved by the troubleshooting tips provided, don't hesitate to reach out to PC Matic's customer support for personalized assistance.</p>
+            <div class="card" style="text-align: center;">
+                <h2>Ready to Secure Your Devices?</h2>
+                <p style="max-width: 700px; margin: 20px auto 30px;">Take control of your cybersecurity today. Login to your PC Matic account to manage your devices, update your security settings, and ensure optimal protection.</p>
             </div>
         </div>
     </section>
     
     <footer>
         <div class="container">
-            <p>This guide is for informational purposes only and is not affiliated with or endorsed by PC Pitstop LLC.</p>
+            <div class="copyright">
+                <p> PC Matic. All rights reserved. This guide is for informational purposes only and is not affiliated with or endorsed by PC Pitstop LLC.</p>
+            </div>
         </div>
     </footer>
+    
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            // Simple validation
+            if(email && password) {
+                // In a real implementation, this would send to a server
+                // For demo, just show an alert
+                alert('Login successful! Redirecting to your dashboard...');
+                
+                // Reset form
+                this.reset();
+                
+                // Scroll to top
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            } else {
+                alert('Please fill in both email and password fields.');
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
